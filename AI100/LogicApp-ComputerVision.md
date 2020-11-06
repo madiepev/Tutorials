@@ -49,6 +49,7 @@ First thing we have to to do in our Logic Apps Designer is to create a trigger t
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/whenblobisadded.png?raw=true)
 
 The trigger is now added to your workflow. 
+
 4. Create a connection to your existing Storage Account.
 5. Select the container **images** that you created during Lab 1: Technical Requirements. 
 
@@ -89,8 +90,10 @@ The trigger is now added to your workflow.
 20. Add a **+ New step**. 
 21. Search for *compose* and add the **Compose** action to your workflow.
 22. Click on the field of **Inputs**. 
+
 We are going to create a JSON object to store in our Cosmos DB. It should end up looking like the screenshot below. Create this by typing into the **Inputs** and using the **Dynamic Content** to add the necessary variables. Make sure all keys and values are between quotation marks ("key":"value"), except for the *Tag Names*. 
 When you add *Captions Caption Text*, it will add a **for each** loop for you. Accept this change and don't remove it.
+
 23. Within your **For each loop**, add a **+ New step**. 
 24. Search for *cosmos db* and select **Create or update document** action to add to your workflow. 
 25. Connect to your previously created **Cosmos DB account**. 
@@ -102,8 +105,10 @@ When you add *Captions Caption Text*, it will add a **for each** loop for you. A
 
 ## Upload images to trigger the Logic App
 1. In the Azure Portal, navigate to the Azure Storage Account you created before.
-2. Select **Overview**, then select **Containers**. 
+2. Select **Overview**, then select **Containers**.
+
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/lab01-storageaccountcontainers.png?raw=true)
+
 3. Select the **images** container you created earlier. 
 4. Select **Upload**. 
 5. On the right you'll see **Upload blob**, click on the icon of a folder next to **Select a file** to upload the images.
