@@ -43,6 +43,7 @@ We are going to create a Logic App which will analyze images using the Computer 
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/blanklogicapp.png?raw=true)
 
 First thing we have to to do in our Logic Apps Designer is to create a trigger that will kick off our workflow. 
+
 3. Search for *blob* and select **When a blob is added or modified**. 
 
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/whenblobisadded.png?raw=true)
