@@ -7,6 +7,19 @@
 - Cognitive Services
 See [Lab 1 - Technical Requirements](https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol/blob/master/Lab1-Technical_Requirements/02-Technical_Requirements.md) for instructions on how to create these necessary resources. 
 
+## Objective
+We are going to create a Logic App which will analyze images using the Computer Vision API which are stored in a Blob Storage and save the descriptions and tags in our Cosmos DB. This lab is an alternative to Lab2 of the AI-100 course. 
+
+## Create a container in Cosmos DB to store metadata
+1. Go to your Azure Cosmos DDB in the Azure Portal.
+2. In **Overview**, click on **+ Add Container** in the top bar. 
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/addcontainercosmosdb.png?raw=true)
+3. Create a new Database called **images**. 
+4. Keep the **Throughput** at manual and 400. 
+5. Fill in **metadata** for **Container id**. 
+6. Put in **/id** for the **Partition key**. 
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/createcontainercosmosdb.PNG?raw=true)
+
 ## Create the Logic App
 1. Open the Azure Portal.
 2. Select **+ Create a Resource** and then enter **logic app** in the search box. 
