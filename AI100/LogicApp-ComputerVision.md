@@ -38,34 +38,52 @@ We are going to create a Logic App which will analyze images using the Computer 
 ## Customize the Logic App
 1. Once deployment is complete. Navigate to your new Logic App. 
 2. Scroll down and under **Templates**, click on **Blank Logic App**. 
+
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/blanklogicapp.png?raw=true)
+
 First thing we have to to do in our Logic Apps Designer is to create a trigger that will kick off our workflow. 
 3. Search for *blob* and select **When a blob is added or modified**. 
+
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/whenblobisadded.png?raw=true)
+
 The trigger is now added to your workflow. 
 4. Create a connection to your existing Storage Account.
 5. Select the container **images** that you created during Lab 1: Technical Requirements. 
+
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/nextstep.png?raw=true)
+
 6. Click on **+ New step** to add a next step and action. 
 7. Search for *get blob content* and select the action **Get blob content** to add this to your workflow. 
-![alt text](https://github.com/madiepev/Tutorials/blob/main/images/newstepafterblobcontent.png?raw=true)
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/getblobcontent.png?raw=true)
+
 8. Click on the field next to **Blob**, a new pop-up window will appear on the right with **Dynamic content**. 
 9. In this pop-up window, select **List of Files Path** to use this to specify the blob. 
-![alt text](https://github.com/madiepev/Tutorials/blob/main/images/dynamiccontent.png?raw=true)
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/listofilespath.png?raw=true)
+
 10. Again, click on **+ New step**. 
-![alt text]
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/newstepafterblobcontent.png?raw=true)
+
 11. Search for **describe image** and select the **Describe Image** action to be added to your workflow. 
-![alt text]
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/describeimage.png?raw=true)
+
 12. Connect to your existing Cognitive Service by copying the endpoint and key from your Cognitive Service resource. 
 13. Click on the field next to **Image Source** and select **Image Content**. 
 14. Click on the field next to **Image Content** and use the **Dynamic content** pop-up window on the right to fill in **File Content**. 
-![alt text]
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/filecontent.png?raw=true)
+
 15. Add a **+ New step**. 
 16. Search for *initialize variable* and choose **Initialize variable** as an action to add to your workflow. 
 17. After **Name** put **ID**. 
 18. For **Type** select **Integer**.
 19. For **Value** type in **999**.
-![alt text]
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/variableid.png?raw=true)
+
 20. Add a **+ New step**. 
 21. Search for *compose* and add the **Compose** action to your workflow.
 22. Click on the field of **Inputs**. 
@@ -79,7 +97,6 @@ When you add *Captions Caption Text*, it will add a **for each** loop for you. A
 28. For **Document** use the **Dynamic Content** to fill in **Outputs**. 
 29. Add new parameter and add the **Partition key value**.
 30. For **Partition key value**, fill in “List of Files Name”. Don’t forget the quotation marks! 
-
 
 ## Upload images to trigger the Logic App
 1. In the Azure Portal, navigate to the Azure Storage Account you created before.
