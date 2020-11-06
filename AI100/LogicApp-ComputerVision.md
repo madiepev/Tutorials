@@ -18,6 +18,7 @@ We are going to create a Logic App which will analyze images using the Computer 
 4. Keep the **Throughput** at manual and 400. 
 5. Fill in **metadata** for **Container id**. 
 6. Put in **/id** for the **Partition key**. 
+
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/createcontainercosmosdb.PNG?raw=true)
 
 ## Create the Logic App
