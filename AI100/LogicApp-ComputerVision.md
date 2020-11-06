@@ -46,6 +46,38 @@ The trigger is now added to your workflow.
 ![alt text]
 6. Click on **+ New step** to add a next step and action. 
 7. Search for *get blob content* and select the action **Get blob content** to add this to your workflow. 
+![alt text]
+8. Click on the field next to **Blob**, a new pop-up window will appear on the right with **Dynamic content**. 
+9. In this pop-up window, select **List of Files Path** to use this to specify the blob. 
+![alt text]
+10. Again, click on **+ New step**. 
+![alt text]
+11. Search for **describe image** and select the **Describe Image** action to be added to your workflow. 
+![alt text]
+12. Connect to your existing Cognitive Service by copying the endpoint and key from your Cognitive Service resource. 
+13. Click on the field next to **Image Source** and select **Image Content**. 
+14. Click on the field next to **Image Content** and use the **Dynamic content** pop-up window on the right to fill in **File Content**. 
+![alt text]
+15. Add a **+ New step**. 
+16. Search for *initialize variable* and choose **Initialize variable** as an action to add to your workflow. 
+17. After **Name** put **ID**. 
+18. For **Type** select **Integer**.
+19. For **Value** type in **999**.
+![alt text]
+20. Add a **+ New step**. 
+21. Search for *compose* and add the **Compose** action to your workflow.
+22. Click on the field of **Inputs**. 
+We are going to create a JSON object to store in our Cosmos DB. It should end up looking like the screenshot below. Create this by typing into the **Inputs** and using the **Dynamic Content** to add the necessary variables. Make sure all keys and values are between quotation marks ("key":"value"), except for the *Tag Names*. 
+When you add *Captions Caption Text*, it will add a **for each** loop for you. Accept this change and don't remove it.
+23. Within your **For each loop**, add a **+ New step**. 
+24. Search for *cosmos db* and select **Create or update document** action to add to your workflow. 
+25. Connect to your previously created **Cosmos DB account**. 
+26. For **Database ID** select **images**.
+27. For **Collection ID** select **metadata**.
+28. For **Document** use the **Dynamic Content** to fill in **Outputs**. 
+29. Add new parameter and add the **Partition key value**.
+30. For **Partition key value**, fill in “List of Files Name”. Don’t forget the quotation marks! 
+
 
 ## Upload images to trigger the Logic App
 1. In the Azure Portal, navigate to the Azure Storage Account you created before.
