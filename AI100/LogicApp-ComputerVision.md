@@ -109,6 +109,8 @@ When you add *Captions Caption Text*, it will add a **for each** loop for you. A
 
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/createorupdatedocument.png?raw=true)
 
+31. Finally, on the left top **save** your workflow and **Run** it. Your Logic App is now waiting for blobs to be added to your Storage Account container.
+
 ## Upload images to trigger the Logic App
 1. In the Azure Portal, navigate to the Azure Storage Account you created before.
 2. Select **Overview**, then select **Containers**.
@@ -119,3 +121,5 @@ When you add *Captions Caption Text*, it will add a **for each** loop for you. A
 4. Select **Upload**. 
 5. On the right you'll see **Upload blob**, click on the icon of a folder next to **Select a file** to upload the images.
 6. Select the images from the folder C:\Lab_Files\Lab2-Implement_Computer_Vision\sample_images. **Note!** Don't upload the .py and .md files but only those files that end with .jpg. 
+
+7. Review the items in your metadata container in your Cosmos DB. You should be able to view the metadata and the results of the Computer Vision there. 
