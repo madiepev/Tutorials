@@ -15,6 +15,7 @@ We are going to create a Logic App which will analyze images using the Computer 
 2. In **Overview**, click on **+ Add Container** in the top bar. 
 
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/addcontainercosmosdb.png?raw=true)
+
 3. Create a new Database called **images**. 
 4. Keep the **Throughput** at manual and 400. 
 5. Fill in **metadata** for **Container id**. 
