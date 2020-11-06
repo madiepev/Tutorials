@@ -13,11 +13,13 @@ We are going to create a Logic App which will analyze images using the Computer 
 ## Create a container in Cosmos DB to store metadata
 1. Go to your Azure Cosmos DB in the Azure Portal.
 2. In **Overview**, click on **+ Add Container** in the top bar. 
+
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/addcontainercosmosdb.png?raw=true)
 3. Create a new Database called **images**. 
 4. Keep the **Throughput** at manual and 400. 
 5. Fill in **metadata** for **Container id**. 
 6. Put in **/id** for the **Partition key**. 
+
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/createcontainercosmosdb.PNG?raw=true)
 
 ## Create the Logic App
@@ -36,20 +38,20 @@ We are going to create a Logic App which will analyze images using the Computer 
 ## Customize the Logic App
 1. Once deployment is complete. Navigate to your new Logic App. 
 2. Scroll down and under **Templates**, click on **Blank Logic App**. 
-![alt text]
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/blanklogicapp.png?raw=true)
 First thing we have to to do in our Logic Apps Designer is to create a trigger that will kick off our workflow. 
 3. Search for *blob* and select **When a blob is added or modified**. 
-![alt text]
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/whenblobisadded.png?raw=true)
 The trigger is now added to your workflow. 
 4. Create a connection to your existing Storage Account.
 5. Select the container **images** that you created during Lab 1: Technical Requirements. 
-![alt text]
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/nextstep.png?raw=true)
 6. Click on **+ New step** to add a next step and action. 
 7. Search for *get blob content* and select the action **Get blob content** to add this to your workflow. 
-![alt text]
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/newstepafterblobcontent.png?raw=true)
 8. Click on the field next to **Blob**, a new pop-up window will appear on the right with **Dynamic content**. 
 9. In this pop-up window, select **List of Files Path** to use this to specify the blob. 
-![alt text]
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/dynamiccontent.png?raw=true)
 10. Again, click on **+ New step**. 
 ![alt text]
 11. Search for **describe image** and select the **Describe Image** action to be added to your workflow. 
