@@ -16,8 +16,8 @@ See [Lab 1 - Technical Requirements](https://github.com/MicrosoftLearning/AI-100
 7. For **Select the location**, keep it at the default **Region**.
 8. For **Location**, choose one near you. 
 9. Keep **Log Analytics** on **Off**. 
-10. Click on **Review + Create**. 
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/logicappcreation.PNG?raw=true)
+10. Click on **Review + Create**. 
 11. Once validation passes, select **Create**.
 
 ## Upload images to trigger the Logic App
