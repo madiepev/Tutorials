@@ -8,17 +8,16 @@
 See [Lab 1 - Technical Requirements](https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol/blob/master/Lab1-Technical_Requirements/02-Technical_Requirements.md) for instructions on how to create these necessary resources. 
 
 ## Objective
-We are going to create a Logic App which will analyze images using the Computer Vision API which are stored in a Blob Storage and save the descriptions and tags in our Cosmos DB. This lab is an alternative to Lab2 of the AI-100 course. 
+We are going to create a Logic App which will analyze images using the Computer Vision API which are stored in a Blob Storage and save the descriptions and tags in our Cosmos DB. This lab is an alternative to Lab 2 of the AI-100 course. 
 
 ## Create a container in Cosmos DB to store metadata
-1. Go to your Azure Cosmos DDB in the Azure Portal.
+1. Go to your Azure Cosmos DB in the Azure Portal.
 2. In **Overview**, click on **+ Add Container** in the top bar. 
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/addcontainercosmosdb.png?raw=true)
 3. Create a new Database called **images**. 
 4. Keep the **Throughput** at manual and 400. 
 5. Fill in **metadata** for **Container id**. 
 6. Put in **/id** for the **Partition key**. 
-
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/createcontainercosmosdb.PNG?raw=true)
 
 ## Create the Logic App
@@ -33,6 +32,20 @@ We are going to create a Logic App which will analyze images using the Computer 
 ![alt text](https://github.com/madiepev/Tutorials/blob/main/images/logicappcreation.PNG?raw=true)
 10. Click on **Review + Create**. 
 11. Once validation passes, select **Create**.
+
+## Customize the Logic App
+1. Once deployment is complete. Navigate to your new Logic App. 
+2. Scroll down and under **Templates**, click on **Blank Logic App**. 
+![alt text]
+First thing we have to to do in our Logic Apps Designer is to create a trigger that will kick off our workflow. 
+3. Search for *blob* and select **When a blob is added or modified**. 
+![alt text]
+The trigger is now added to your workflow. 
+4. Create a connection to your existing Storage Account.
+5. Select the container **images** that you created during Lab 1: Technical Requirements. 
+![alt text]
+6. Click on **+ New step** to add a next step and action. 
+7. Search for *get blob content* and select the action **Get blob content** to add this to your workflow. 
 
 ## Upload images to trigger the Logic App
 1. In the Azure Portal, navigate to the Azure Storage Account you created before.
