@@ -91,8 +91,12 @@ The trigger is now added to your workflow.
 21. Search for *compose* and add the **Compose** action to your workflow.
 22. Click on the field of **Inputs**. 
 
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/composejson.png?raw=true)
+
 We are going to create a JSON object to store in our Cosmos DB. It should end up looking like the screenshot below. Create this by typing into the **Inputs** and using the **Dynamic Content** to add the necessary variables. Make sure all keys and values are between quotation marks ("key":"value"), except for the *Tag Names*. 
 When you add *Captions Caption Text*, it will add a **for each** loop for you. Accept this change and don't remove it.
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/foreachcaption.png?raw=true)
 
 23. Within your **For each loop**, add a **+ New step**. 
 24. Search for *cosmos db* and select **Create or update document** action to add to your workflow. 
@@ -102,6 +106,8 @@ When you add *Captions Caption Text*, it will add a **for each** loop for you. A
 28. For **Document** use the **Dynamic Content** to fill in **Outputs**. 
 29. Add new parameter and add the **Partition key value**.
 30. For **Partition key value**, fill in “List of Files Name”. Don’t forget the quotation marks! 
+
+![alt text](https://github.com/madiepev/Tutorials/blob/main/images/createorupdatedocument.png?raw=true)
 
 ## Upload images to trigger the Logic App
 1. In the Azure Portal, navigate to the Azure Storage Account you created before.
